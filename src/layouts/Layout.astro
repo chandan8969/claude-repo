@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans selection:bg-indigo-100">
+    <nav class="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50">
+      <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+        <a href="/" class="font-bold text-xl tracking-tight text-indigo-600">chandan8969</a>
+        <div class="flex gap-6 text-sm font-medium text-slate-600">
+          <a href="/" class="hover:text-indigo-600 transition-colors">Projects</a>
+          <a href="https://github.com/chandan8969" target="_blank" class="hover:text-indigo-600 transition-colors">GitHub</a>
+        </div>
+      </div>
+    </nav>
+    <main class="max-w-5xl mx-auto px-4 py-12">
+      <slot />
+    </main>
+    <footer class="border-t py-8 text-center text-sm text-slate-500">
+      <p>&copy; {new Date().getFullYear()} chandan8969. Built with Astro & Tailwind.</p>
+    </footer>
+  </body>
+</html>
